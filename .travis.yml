@@ -3,11 +3,10 @@ language: node_js
 node_js:
   - "11"
 
-install:
-  - yarn add -g codecov
-
 cache:
   yarn: true
+  directories:
+    - node_modules
 
 after_success:
   - ./bin/codecov -e TRAVIS_NODE_VERSION
