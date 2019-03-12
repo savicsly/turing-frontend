@@ -5,7 +5,9 @@ install:
 
 cache:
   yarn: true
+  directories:
+    - node_modules
 
-script:
-  - codecov
+after_success:
+  - ./bin/codecov -e TRAVIS_NODE_VERSION
 
